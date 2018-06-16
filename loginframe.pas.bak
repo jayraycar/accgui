@@ -1,0 +1,81 @@
+unit loginFrame;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+    Classes, SysUtils, FileUtil, Forms, Controls, StdCtrls, LCLintf,
+    LCLtype, Base64, Dialogs,
+    constants, httpsend, ssl_openssl, jsonparser, fpjson;
+
+type
+    Tlogin = class(TFrame)
+        loginButton: TButton;
+        userEdit: TEdit;
+        passwordEdit: TEdit;
+        Label1: TLabel;
+        Label2: TLabel;
+        procedure loginButtonClick(Sender: TObject);
+    private
+        { private declarations }
+        //httpClient: TFPhttpClient;
+
+    public
+        { public declarations }
+        db_name: string;
+        server: string;
+        port: string;
+        urlStem : string;
+        parentHandle: HWND;
+        session_id: string;
+        loginOK: boolean;
+    end;
+
+implementation
+
+{$R *.lfm}
+
+{ Tlogin }
+
+procedure Tlogin.loginButtonClick(Sender: TObject);
+var
+    url :string;
+    auth64 :string;
+    httpsend: THTTPSend;
+    jData: TJSONData;
+    jObj: TJSONObject;
+begin
+    loginOK := false;
+    url := 'http://' + server + ':' + port + '/json/login';
+{    auth64 := encodeStringBase64(userEdit.Text + ':' + passwordEdit.Text);
+    try
+        httpClient := TFPHttpClient.create(nil);
+        httpClient.addHeader('Authorization','Basic ' + auth64);
+        try
+            httpClient.get(url);
+            if (httpClient.responseStatusCode = 200) then
+            begin
+                loginOK := true;
+                session_id := httpClient.Cookies[0];
+            end;
+        except on E: Exception do
+            if (httpClient.responseStatusCode = 401) then
+                ShowMessage('Login failed')
+            else
+                ShowMessage(E.message);
+        end;
+    finally
+        httpClient.free;
+    end;
+
+    if (loginOK) then
+        postMessage(parentHandle, LM_FRAME_MSG, FN_LOGIN, LOGIN_PASS)
+    else
+        postMessage(parentHandle, LM_FRAME_MSG, FN_LOGIN, LOGIN_INVALID);
+}
+    postMessage(parentHandle, LM_FRAME_MSG, FR_LOGIN, NO_VALUE)
+end;
+
+end.
+

@@ -1,0 +1,81 @@
+object mainForm: TmainForm
+  Left = 310
+  Height = 583
+  Top = 121
+  Width = 873
+  Caption = 'mainForm'
+  ClientHeight = 563
+  ClientWidth = 873
+  Menu = MainMenu
+  LCLVersion = '1.8.4.0'
+  object quickButtonsPanel: TPanel
+    Left = 0
+    Height = 96
+    Top = 0
+    Width = 873
+    Align = alTop
+    BevelWidth = 3
+    ClientHeight = 96
+    ClientWidth = 873
+    TabOrder = 0
+    OnClick = quickButtonsPanelClick
+    object Label1: TLabel
+      Left = 32
+      Height = 15
+      Top = 16
+      Width = 26
+      Caption = 'User:'
+      ParentColor = False
+    end
+    object userEdit: TEdit
+      Left = 71
+      Height = 23
+      Top = 16
+      Width = 80
+      Enabled = False
+      TabOrder = 0
+      Text = 'userEdit'
+    end
+  end
+  object mainGroupBox: TGroupBox
+    Left = 0
+    Height = 467
+    Top = 96
+    Width = 873
+    Align = alClient
+    Caption = 'mainGroupBox'
+    ClientHeight = 447
+    ClientWidth = 869
+    TabOrder = 1
+    object mainStatusBar: TStatusBar
+      Left = 0
+      Height = 23
+      Top = 424
+      Width = 869
+      Panels = <>
+    end
+  end
+  object MainMenu: TMainMenu
+    left = 786
+    top = 408
+    object appMenuItem: TMenuItem
+      Caption = 'Application'
+      OnClick = appMenuItemClick
+      object loginMenuItem: TMenuItem
+        Caption = 'Login'
+        OnClick = loginMenuItemClick
+      end
+      object logoutMenuItem: TMenuItem
+        Caption = 'Logout'
+        OnClick = logoutMenuItemClick
+      end
+      object spacer1MenuItem: TMenuItem
+        Caption = '-'
+      end
+      object exitMenuItem: TMenuItem
+        Caption = 'Exit'
+        OnClick = exitMenuItemClick
+      end
+    end
+  end
+end
