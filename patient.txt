@@ -1,0 +1,50 @@
+Patient details:
+
+Surname
+Given name
+Middle name(s)
+Date of birth
+Gender
+Residential Address
+    Street 1
+    Street 2
+    Suburb/Town
+    State
+    Postcode
+Billing Address
+    Street 1
+    Street 2
+    Suburb/Town
+    State
+    Postcode
+Medicare
+    Card number
+    Card reference
+    Expiry date
+Veteran's Affairs
+    Card number
+    Card reference
+    Card type
+Health Fund(s)
+    Health fund
+    Card number
+    Card reference
+    Start date
+    Expiry date
+Hospital episodes
+    Reference id
+    Admission date
+    Admission time
+    Admission type
+    Discharge date
+    Discharge time
+    Discharge type
+Hospital events
+    Event type (Theatre, movement, ...)
+    Event start date
+    Event start time
+    Event end date
+    Event end time
+    Location
+    Procedure(s)
+    Prosthesis(es)

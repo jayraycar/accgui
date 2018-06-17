@@ -1,0 +1,17 @@
+Billing Request details:
+
+Patient id
+Request Date
+Request Time
+Service Date
+Service time
+Presentation type (inpatient, outpatient, emergency, ...)
+Billing category
+Bill payer
+Hospital provider Id
+Requesting doctor id
+Referral Id
+Service provider
+Billing item id(s)
+Billing item override(s)
+Billing item override value(s)
